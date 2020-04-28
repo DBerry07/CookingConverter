@@ -8,15 +8,16 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/fragment"
+        android:id="@+id/display_fragment_main"
         android:name="com.revature.cookingvolumetoweight.DisplayFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_weight="2" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/main_fragment"
-        android:name="com.revature.cookingvolumetoweight.CalculatorFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>

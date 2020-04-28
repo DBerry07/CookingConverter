@@ -15,7 +15,9 @@
     <string name="zero">0</string>
     <string name="point">.</string>
     <string name="enter">=</string>
+    <string name="clear">CLR</string>
 
+    <string name="calculator">Calculator</string>
     <string name="substance">Substance</string>
     <string name="from">From</string>
     <string name="to">To</string>

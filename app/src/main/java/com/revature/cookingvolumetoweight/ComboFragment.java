@@ -1,3 +1,4 @@
+/*
 package com.revature.cookingvolumetoweight;
 
 import android.os.Bundle;
@@ -10,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+*/
 /**
  * A simple {@link Fragment} subclass.
- */
+ *//*
+
 public class ComboFragment extends Fragment {
 
     private DisplayFragment displayFragment;
@@ -40,3 +43,4 @@ public class ComboFragment extends Fragment {
         displayFragment.updateEntry(str);
     }
 }
+*/

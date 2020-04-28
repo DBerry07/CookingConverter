@@ -15,6 +15,9 @@ import android.widget.Button;
  */
 public class CalculatorFragment extends Fragment implements View.OnClickListener {
 
+    private MainActivity parent;
+    private View thisView;
+
     public CalculatorFragment() {
         // Required empty public constructor
     }
@@ -24,28 +27,33 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_calculator, container, false);
+        thisView = inflater.inflate(R.layout.fragment_calculator, container, false);
 
-        view.findViewById(R.id.btn_0).setOnClickListener(this);
-        view.findViewById(R.id.btn_1).setOnClickListener(this);
-        view.findViewById(R.id.btn_2).setOnClickListener(this);
-        view.findViewById(R.id.btn_3).setOnClickListener(this);
-        view.findViewById(R.id.btn_4).setOnClickListener(this);
-        view.findViewById(R.id.btn_5).setOnClickListener(this);
-        view.findViewById(R.id.btn_6).setOnClickListener(this);
-        view.findViewById(R.id.btn_7).setOnClickListener(this);
-        view.findViewById(R.id.btn_8).setOnClickListener(this);
-        view.findViewById(R.id.btn_9).setOnClickListener(this);
-        view.findViewById(R.id.btn_point).setOnClickListener(this);
-        view.findViewById(R.id.btn_enter).setOnClickListener(this);
+        parent = (MainActivity) getActivity();
 
-        return view;
+        setOnClickListener(R.id.btn_0);
+        setOnClickListener(R.id.btn_1);
+        setOnClickListener(R.id.btn_2);
+        setOnClickListener(R.id.btn_3);
+        setOnClickListener(R.id.btn_4);
+        setOnClickListener(R.id.btn_5);
+        setOnClickListener(R.id.btn_6);
+        setOnClickListener(R.id.btn_7);
+        setOnClickListener(R.id.btn_8);
+        setOnClickListener(R.id.btn_9);
+        setOnClickListener(R.id.btn_point);
+        setOnClickListener(R.id.btn_enter);
+
+        return thisView;
+    }
+
+    private void setOnClickListener(int viewID){
+        thisView.findViewById(viewID).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view){
         Button btn = (Button) view;
-        ComboFragment parent = (ComboFragment) getParentFragment();
         switch (btn.getId()){
             case R.id.btn_enter:
                 break;
