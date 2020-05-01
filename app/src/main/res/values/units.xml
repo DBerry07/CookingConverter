@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="units">
+        <item>@string/metric_grams</item>
+        <item>@string/metric_kilos</item>
+        <item>@string/imper_ounces</item>
+        <item>@string/imper_pounds</item>
+        <item>QUARTS</item>
+    </array>
+</resources>

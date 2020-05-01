@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="to_grams">
+        <item>0.0647989</item> <!-- FROM GRAINS -->
+        <item>1.771845</item> <!-- FROM DRAM -->
+        <item>28.3495</item> <!-- FROM OUNCES -->
+        <item>453.59237</item> <!-- FROM POUNDS -->
+        <item>0.001</item> <!-- FROM MILLIGRAMS -->
+        <item>0.01</item> <!-- FROM CENTIGRAM -->
+        <item>0.1</item> <!-- FROM DECIGRAM -->
+        <item>1.0</item> <!-- FROM GRAMS -->
+        <item>10.0</item> <!-- FROM DEKAGRAMS -->
+        <item>100.0</item> <!-- FROM HECTOGRAM -->
+        <item>1000.0</item> <!-- FROM KILOGRAMS -->
+        <item>1000000.0</item> <!-- FROM METRIC TON -->
+    </array>
+
+    <array name="from_milli">
+        <item>0.033814</item> <!-- TO FLUID OUNCES -->
+        <item>0.00211338</item> <!-- TO PINTS -->
+        <item>0.00105669</item> <!-- TO QUART -->
+        <item>0.000264172</item> <!-- TO GALLON -->
+        <item>0.1</item> <!-- TO CENTILITRE -->
+        <item>0.01</item> <!-- TO DECILITRE -->
+        <item>0.001</item> <!-- TO LITRE -->
+        <item>0.0001</item> <!-- TO DEKALITRE -->
+    </array>
+</resources>

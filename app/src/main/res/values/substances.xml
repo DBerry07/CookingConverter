@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- https://hapman.com/news-and-knowledge/bulk-material-density-guide/ -->
+    <array name="substance_names">
+        <item>@string/flour_whole_wheat</item> <!-- 001: 0.77 -->
+        <item>@string/flour_almond</item> <!-- 002: 1.09 -->
+        <item>@string/flour_barley</item> <!-- 003: 0.46 -->
+        <item>@string/flour_corn</item> <!-- 004: 0.74 -->
+        <item>@string/flour_all_purpose</item> <!-- 005: 0.62 -->
+        <item>@string/salt_rock</item> <!-- 006: 0.56 -->
+    </array>
+
+    <array name="substance_values">
+        <item>0.77</item> <!-- 001: Whole Wheat Flour -->
+        <item>1.09</item> <!-- 002: Almond Flour -->
+        <item>0.46</item> <!-- 003: Barley Flour -->
+        <item>0.74</item> <!-- 004: Corn Flour -->
+        <item>0.62</item> <!-- 005: Flour -->
+        <item>0.56</item> <!-- 006: Rock Salt -->
+    </array>
+</resources>

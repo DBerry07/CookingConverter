@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Cooking Volume to Weight</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="blank"></string>
+
+    <!-- CALCULATOR BUTTONS -->
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -17,12 +18,23 @@
     <string name="enter">=</string>
     <string name="clear">CLR</string>
 
+    <!-- TAB NAMES -->
     <string name="calculator">Calculator</string>
     <string name="substance">Substance</string>
     <string name="from">From</string>
     <string name="to">To</string>
 
-    <string name="sub_text">Substance Name</string>
+    <!-- UNITS -->
+    <string name="imper_ounces">ounces</string>
+    <string name="imper_pounds">pounds</string>
+    <string name="metric_grams">grams</string>
+    <string name="metric_kilos">kilograms</string>
 
-
+    <!-- SUBSTANCES -->
+    <string name="flour_whole_wheat">whole wheat flour (Organic)</string>
+    <string name="flour_almond">almond flour</string>
+    <string name="flour_barley">barley flour</string>
+    <string name="flour_corn">corn flour</string>
+    <string name="flour_all_purpose">flour (all purpose)</string>
+    <string name="salt_rock">rock salt</string>
 </resources>

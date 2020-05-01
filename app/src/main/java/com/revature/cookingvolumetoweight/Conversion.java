@@ -1,86 +1,107 @@
 package com.revature.cookingvolumetoweight;
 
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.util.Pair;
+
+import java.util.ArrayList;
+
 public class Conversion {
 
-    public static final String ounces = "OUNCES";
-    public static final String pounds = "POUNDS";
-    public static final String grams = "GRAMS";
-    public static final String millilitres = "MILLILITRES";
-    public static final String fluidOunces = "FLUID OUNCES";
-    public static final String teaspoons = "TEASPOONS";
-    public static final String tablespoons = "TABLESPOONS";
+    private static boolean unitsSet = false;
+    private ArrayList<Float> toGrams = new ArrayList<>();
+    private ArrayList<Float> fromMilli = new ArrayList<>();
+    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<Float> densities = new ArrayList<>();
 
-    public static float volumeToWeight(float density, float millilitres) {
-        float grams = millilitres * density;
-        return grams;
+    private Resources resources;
+
+    private static int ouncesPos = 2;
+    private static int poundsPos = 3;
+    private static String ounce = "ounce";
+    private static String pound = "pound";
+
+    private static int fluidOuncePos = 0;
+    private static int quartPos = 2;
+
+    private static String fluidOunce = "fluid";
+    private static String quart = "quart";
+    private static String teaspoons = "tea";
+    private static String tablespoons = "table";
+
+    public Conversion(Resources res) {
+        resources = res;
+        getArrays();
     }
 
-    //WEIGHTS
-    public static float gramsOunces(String convertTo, float from){
-        float to = 0.0f;
-        switch (convertTo){
-            case grams:
-                to = from * 28.35f;
-                break;
-            case ounces:
-                to = from / 28.35f;
-                break;
+
+    private void getArrays() {
+        TypedArray array = resources.obtainTypedArray(R.array.to_grams);
+        for (int i = 0; i < array.length(); i++) {
+            toGrams.add(array.getFloat(i, 0.00f));
         }
-        return to;
+
+        array = resources.obtainTypedArray(R.array.from_milli);
+        for (int i = 0; i < array.length(); i++) {
+            fromMilli.add(array.getFloat(i, 0.00f));
+        }
+
+        TypedArray arrayNames = resources.obtainTypedArray(R.array.substance_names);
+        for (int i = 0; i < arrayNames.length(); i++){
+            names.add(arrayNames.getString(i));
+        }
+
+        array = resources.obtainTypedArray(R.array.substance_values);
+        for (int i = 0; i < array.length(); i++){
+            densities.add(array.getFloat(i, 0.00f));
+        }
     }
 
-    public static float gramsPounds(String convertTo, float from){
-        float to = 0.0f;
-        switch (convertTo){
-            case grams:
-                to = gramsOunces(grams, from * 16f);
-                break;
-            case pounds:
-                to = gramsOunces(ounces, from) / 16f;
-                break;
-        }
-        return to;
+
+    public float calculate(Pair<String, Float> substance, Pair<String, Float> from, String to) {
+        float input, output, midstage = 0.0f;
+        String substanceName = substance.first;
+        Float substanceDensity = substance.second;
+        String fromName = from.first;
+        Float fromValue = from.second;
+
+        input = toGrams(fromName, fromValue);
+        midstage = gramsToMillilitres(input, substance);
+        output = fromMillilitres(to, midstage);
+
+        return output;
     }
 
-    //VOLUMES
-    public static float millilitresFluidOunces(String convertTo, float from){
-        float to = 0.0f;
-        switch (convertTo){
-            case millilitres:
-                to = from / 0.033814f;
-                break;
-            case fluidOunces:
-                to = from * 0.033814f;
-                break;
+    public float toGrams(String fromName, Float fromValue) {
+        float answer = 0.00f;
+
+        if (fromName.toUpperCase().contains(ounce.toUpperCase())) {
+            answer = fromValue * toGrams.get(ouncesPos);
         }
-        return to;
+        else if (fromName.toUpperCase().contains(pound.toUpperCase())) {
+            answer = fromValue * toGrams.get(poundsPos);
+        }
+
+        return answer;
     }
 
-    public static float millilitresTeaspoons(String convertTo, float from){
-        float to = 0.0f;
-        switch (convertTo){
-            case millilitres:
-                to = from * 4.92892f;
-                break;
-            case teaspoons:
-                to = from / 4.92892f;
-                break;
-        }
-        return to;
+    private float gramsToMillilitres(float value, Pair<String, Float> substance) {
+        return value / substance.second;
     }
 
-    public static float millilitresTablespoon(String convertTo, float from){
-        float to = 0.0f;
-        switch (convertTo){
-            case millilitres:
-                to = millilitresTeaspoons(grams, from * 3);
-                break;
-            case tablespoons:
-                to = millilitresTeaspoons(teaspoons, from) / 3;
-                break;
+    public float fromMillilitres(String toName, Float toValue) {
+        float answer = 0.00f;
+
+        if (toName.toUpperCase().contains(fluidOunce.toUpperCase())) {
+            answer = toValue * fromMilli.get(fluidOuncePos);
         }
-        return to;
+        else if (toName.toUpperCase().contains(quart.toUpperCase())) {
+            answer = toValue * fromMilli.get(quartPos);
+        }
+
+        return answer;
     }
+
 
 
 

@@ -43,12 +43,12 @@ public class DisplayFragment extends Fragment
         // Inflate the layout for this fragment
         thisView = inflater.inflate(R.layout.fragment_display, container, false);
 
-        fromVal = thisView.findViewById(R.id.tv_from_val);
-        fromName = thisView.findViewById(R.id.tv_from_name);
-        toVal = thisView.findViewById(R.id.tv_to_val);
-        toName = thisView.findViewById(R.id.tv_to_name);
-        substance = thisView.findViewById(R.id.tv_sub);
-        density = thisView.findViewById(R.id.tv_density);
+        fromVal = thisView.findViewById(R.id.display_tv_from_val);
+        fromName = thisView.findViewById(R.id.display_tv_from_name);
+        toVal = thisView.findViewById(R.id.display_tv_to_val);
+        toName = thisView.findViewById(R.id.display_tv_to_name);
+        substance = thisView.findViewById(R.id.display_tv_sub_name);
+        density = thisView.findViewById(R.id.display_tv_density);
         tabLayout = thisView.findViewById(R.id.display_tabs);
         parent = (MainActivity) getActivity();
 
@@ -104,7 +104,16 @@ public class DisplayFragment extends Fragment
     }
 
     public boolean updateFromVal(String str){
-        String contents = "";
+        String contents = getResources().getString(R.string.blank);
+        if (str.equals(getResources().getString(R.string.blank))) {
+            try {
+                fromVal.setText(contents);
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
         try {
             contents = fromVal.getText().toString();
         } catch (Exception e){
@@ -120,9 +129,9 @@ public class DisplayFragment extends Fragment
         return true;
     }
 
-    public boolean updateSubstance(Pair<String, Double> pair){
+    public boolean updateSubstance(Pair<String, Float> pair){
         String name = "";
-        double density = 0.0;
+        float density = 0.0f;
         try {
             name = pair.first;
             density = pair.second;
@@ -131,7 +140,7 @@ public class DisplayFragment extends Fragment
         }
         try {
             this.substance.setText(name);
-            this.density.setText(Double.toString(density));
+            this.density.setText(Float.toString(density));
             return true;
         } catch (Exception e){
             e.printStackTrace();
@@ -158,5 +167,19 @@ public class DisplayFragment extends Fragment
             e.printStackTrace();
         }
         return false;
+    }
+
+    public boolean updateToValue(String str){
+        try{
+            this.toVal.setText(str);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public String fetchViewText(int viewID) {
+        return ((TextView) getView().findViewById(viewID)).getText().toString();
     }
 }

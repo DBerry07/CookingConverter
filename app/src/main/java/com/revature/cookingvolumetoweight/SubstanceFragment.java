@@ -1,5 +1,6 @@
 package com.revature.cookingvolumetoweight;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -23,18 +25,20 @@ public class SubstanceFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private ArrayList<Pair<String, Double>> makeData(){
+    private ArrayList<Pair<String, Float>> makeData(){
 
-        ArrayList<Pair<String, Double>> list = new ArrayList<>();
+        ArrayList<Pair<String, Float>> list = new ArrayList<>();
+        TypedArray substanceNames = getResources().obtainTypedArray(R.array.substance_names);
+        TypedArray substanceValues = getResources().obtainTypedArray(R.array.substance_values);
 
-        //https://hapman.com/news-and-knowledge/bulk-material-density-guide/
+        for (int i = 0; i < substanceNames.length(); i++){
 
-        list.add(new Pair<>("Whole Wheat Flour (Organic)", 0.77));
-        list.add(new Pair<>("Almond Flour", 1.09));
-        list.add(new Pair<>("Barley Flour", 0.46));
-        list.add(new Pair<>("Corn Flour", 0.74));
-        list.add(new Pair<>("Flour", 0.62));
-        list.add(new Pair<>("Rock Salt", 0.560));
+            Pair<String, Float> pair = new Pair<>(
+                    substanceNames.getString(i).toUpperCase(Locale.CANADA),
+                    substanceValues.getFloat(i, 0.00f)
+            );
+            list.add(pair);
+        }
 
         return list;
     }

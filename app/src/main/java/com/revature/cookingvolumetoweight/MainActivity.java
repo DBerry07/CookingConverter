@@ -2,14 +2,9 @@ package com.revature.cookingvolumetoweight;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.NavHost;
-import androidx.navigation.NavHostController;
-import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.util.Pair;
-import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
     public final int SUBSTANCE = 1;
     public final int FROM = 2;
     public final int TO = 3;
+
+    Conversion conversion;
 
     //private NavController navController;
     private FragmentManager fragmentManager;
@@ -38,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         substanceFragment = new SubstanceFragment();
         fromFragment = new FromFragment();
         toFragment = new ToFragment();
+
+        conversion = new Conversion(getResources());
         addFragments();
     }
 
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         displayFragment.updateFromVal(str);
     }
 
-    public void updateSubstance(Pair<String, Double> pair) { displayFragment.updateSubstance(pair); }
+    public void updateSubstance(Pair<String, Float> pair) { displayFragment.updateSubstance(pair); }
 
     public void updateFrom(String str) { displayFragment.updateFromName(str); }
 
@@ -92,5 +91,64 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateToName(String str) { displayFragment.updateToName(str); }
+
+    public void updateToValue(String str) { displayFragment.updateToValue(str); }
+
+    public void calculate(Pair<String, Float> substance, Pair<String, Float> from, String to) {
+        float answer = conversion.calculate(substance, from, to);
+        updateToValue(Float.toString(answer));
+    }
+
+    public boolean updateView(int viewID) {
+
+        return false;
+    }
+
+    public String fetchViewText(int viewID) {
+
+        switch (viewID) {
+            case R.id.display_tv_sub_name:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.display_tv_density:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.display_tv_from_name:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.display_tv_from_val:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.display_tv_to_name:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.display_tv_to_val:
+                return displayFragment.fetchViewText(viewID);
+            case R.id.calc_btn_0:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_1:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_2:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.btn_3:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.btn_4:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_5:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_6:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_7:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_8:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_9:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_clear:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_enter:
+                return calculatorFragment.fetchViewText(viewID);
+            case R.id.calc_btn_point:
+                return calculatorFragment.fetchViewText(viewID);
+            default:
+                return getResources().getString(R.string.blank);
+        }
+
+    }
 
 }

@@ -63,12 +63,12 @@ public class SubstanceAdapter extends RecyclerView.Adapter<SubstanceAdapter.Subs
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) { return false; }
     }
 
-    private ArrayList<Pair<String, Double>> data;
+    private ArrayList<Pair<String, Float>> data;
     private ViewGroup parent;
     private View view;
     private MainActivity activity;
 
-    public SubstanceAdapter(MainActivity activity, ArrayList<Pair<String, Double>> data){
+    public SubstanceAdapter(MainActivity activity, ArrayList<Pair<String, Float>> data){
         this.data = data;
         this.activity = activity;
     }
@@ -87,7 +87,7 @@ public class SubstanceAdapter extends RecyclerView.Adapter<SubstanceAdapter.Subs
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(SubstanceAdapter.SubstanceViewHolder viewHolder, int position){
-        Pair<String, Double> item = data.get(position);
+        Pair<String, Float> item = data.get(position);
         viewHolder.name.setText(item.first);
         viewHolder.density.setText(item.second.toString());
 

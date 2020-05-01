@@ -23,21 +23,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@id/btn_7"
+                    android:id="@+id/calc_btn_7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/seven" />
 
                 <Button
-                    android:id="@id/btn_8"
+                    android:id="@+id/calc_btn_8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/eight" />
 
                 <Button
-                    android:id="@id/btn_9"
+                    android:id="@+id/calc_btn_9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -52,21 +52,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@id/btn_4"
+                    android:id="@+id/calc_btn_4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/four" />
 
                 <Button
-                    android:id="@id/btn_5"
+                    android:id="@+id/calc_btn_5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/five" />
 
                 <Button
-                    android:id="@id/btn_6"
+                    android:id="@+id/calc_btn_6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -80,21 +80,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@id/btn_1"
+                    android:id="@+id/calc_btn_1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/one" />
 
                 <Button
-                    android:id="@id/btn_2"
+                    android:id="@+id/calc_btn_2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/two" />
 
                 <Button
-                    android:id="@id/btn_3"
+                    android:id="@+id/calc_btn_3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -108,14 +108,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@id/btn_0"
+                    android:id="@+id/calc_btn_0"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="5.2"
                     android:text="@string/zero" />
 
                 <Button
-                    android:id="@id/btn_point"
+                    android:id="@+id/calc_btn_point"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -131,14 +131,14 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_clear"
+                android:id="@+id/calc_btn_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:text="@string/clear" />
 
             <Button
-                android:id="@id/btn_enter"
+                android:id="@+id/calc_btn_enter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

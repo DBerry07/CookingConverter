@@ -1,5 +1,6 @@
 package com.revature.cookingvolumetoweight;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -23,15 +25,11 @@ public class ToFragment extends Fragment {
     }
 
     private ArrayList<String> makeData(){
-
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.units);
         ArrayList<String> list = new ArrayList<>();
-        list.add("Ounces");
-        list.add("Pounds");
-        list.add("Grams");
-        list.add("Kilograms");
-        list.add("Millilitres");
-        list.add("Quarts");
-        list.add("Litres");
+        for (int i = 0; i < typedArray.length(); i++) {
+            list.add(typedArray.getString(i).toUpperCase(Locale.CANADA));
+        }
         return list;
     }
 
