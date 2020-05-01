@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--
+    <integer name="to_gram_from_grain">0</integer>
+    <integer name="to_gram_from_dram">1</integer>
+    <integer name="to_gram_from_ounce">2</integer>
+    <integer name="to_gram_from_pound">3</integer>
+    <integer name="to_gram_from_milligram">4</integer>
+    <integer name="to_gram_from_centigram">5</integer>
+    <integer name="to_gram_from_decigram">6</integer>
+    <integer name="to_gram_from_gram">7</integer>
+    <integer name="to_gram_from_dekagram">8</integer>
+    <integer name="to_gram_from_hectogram">9</integer>
+    <integer name="to_gram_from_kilogram">10</integer>
+    <integer name="to_gram_from_metric_ton">11</integer>
+
+    <integer name="from_millilitres_to_teaspoons">0</integer>
+    <integer name="from_millilitres_to_tablespoons">1</integer>
+    <integer name="from_millilitres_to_fl_oz">2</integer>
+    <integer name="from_millilitres_to_pints">3</integer>
+    <integer name="from_millilitres_to_quarts">4</integer>
+    <integer name="from_millilitres_to_gallons">5</integer>
+    <integer name="from_millilitres_to_centilitres">6</integer>
+    <integer name="from_millilitres_to_decilitres">7</integer>
+    <integer name="from_millilitres_to_litres">8</integer>
+    <integer name="from_millilitres_to_dekalitres">9</integer>
+    -->
+
     <array name="to_grams">
         <item>0.0647989</item> <!-- FROM GRAINS -->
         <item>1.771845</item> <!-- FROM DRAM -->
@@ -16,10 +43,13 @@
     </array>
 
     <array name="from_milli">
+        <item>0.202884</item> <!-- TO TEASPOONS -->
+        <item>0.067628</item> <!-- TO TABLESPOONS -->
         <item>0.033814</item> <!-- TO FLUID OUNCES -->
         <item>0.00211338</item> <!-- TO PINTS -->
         <item>0.00105669</item> <!-- TO QUART -->
         <item>0.000264172</item> <!-- TO GALLON -->
+        <item>1.0</item> <!-- TO MILLILITRE -->
         <item>0.1</item> <!-- TO CENTILITRE -->
         <item>0.01</item> <!-- TO DECILITRE -->
         <item>0.001</item> <!-- TO LITRE -->

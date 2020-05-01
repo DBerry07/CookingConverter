@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="units">
-        <item>@string/metric_grams</item>
-        <item>@string/metric_kilos</item>
+    <array name="units_weights">
+        <item>@string/imper_grains</item>
+        <item>@string/imper_drams</item>
         <item>@string/imper_ounces</item>
         <item>@string/imper_pounds</item>
-        <item>QUARTS</item>
+        <item>@string/metric_milligrams</item>
+        <item>@string/metric_centigrams</item>
+        <item>@string/metric_decigrams</item>
+        <item>@string/metric_grams</item>
+        <item>@string/metric_dekagrams</item>
+        <item>@string/metric_hectograms</item>
+        <item>@string/metric_kilograms</item>
+        <item>@string/metric_tons</item>
+
+    </array>
+
+    <array name="units_volume">
+        <item>@string/imper_teaspoons</item>
+        <item>@string/imper_tablespoons</item>
+        <item>@string/imper_fl_oz</item>
+        <item>@string/imper_pints</item>
+        <item>@string/imper_quarts</item>
+        <item>@string/imper_gallons</item>
+        <item>@string/metric_millilitres</item>
+        <item>@string/metric_centilitres</item>
+        <item>@string/metric_decilitres</item>
+        <item>@string/metric_litres</item>
+        <item>@string/metric_dekalitres</item>
     </array>
 </resources>

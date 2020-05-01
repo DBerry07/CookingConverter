@@ -26,11 +26,18 @@ public class FromFragment extends Fragment {
     }
 
     private ArrayList<String> makeData(){
-        TypedArray typedArray = getResources().obtainTypedArray(R.array.units);
         ArrayList<String> list = new ArrayList<>();
+
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.units_weights);
         for (int i = 0; i < typedArray.length(); i++) {
             list.add(typedArray.getString(i).toUpperCase(Locale.CANADA));
         }
+
+        typedArray = getResources().obtainTypedArray(R.array.units_volume);
+        for (int i = 0; i < typedArray.length(); i++) {
+            list.add(typedArray.getString(i).toUpperCase(Locale.CANADA));
+        }
+
         return list;
     }
 

@@ -24,11 +24,32 @@
     <string name="from">From</string>
     <string name="to">To</string>
 
-    <!-- UNITS -->
+    <!-- UNITS IMPERIAL-->
+    <string name="imper_teaspoons">teaspoons</string>
+    <string name="imper_tablespoons">tablespoons</string>
+    <string name="imper_grains">grains</string>
+    <string name="imper_drams">drams</string>
     <string name="imper_ounces">ounces</string>
     <string name="imper_pounds">pounds</string>
+    <string name="imper_fl_oz">fluid ounces</string>
+    <string name="imper_pints">pints</string>
+    <string name="imper_quarts">quarts</string>
+    <string name="imper_gallons">gallons</string>
+
+    <!-- UNITS METRIC -->
+    <string name="metric_milligrams">milligrams</string>
+    <string name="metric_centigrams">centigrams</string>
+    <string name="metric_decigrams">decigrams</string>
     <string name="metric_grams">grams</string>
-    <string name="metric_kilos">kilograms</string>
+    <string name="metric_dekagrams">dekagrams</string>
+    <string name="metric_hectograms">hectogram</string>
+    <string name="metric_kilograms">kilograms</string>
+    <string name="metric_tons">metric tons</string>
+    <string name="metric_millilitres">millilitres</string>
+    <string name="metric_centilitres">centilitres</string>
+    <string name="metric_decilitres">decilitres</string>
+    <string name="metric_litres">litres</string>
+    <string name="metric_dekalitres">dekalitres</string>
 
     <!-- SUBSTANCES -->
     <string name="flour_whole_wheat">whole wheat flour (Organic)</string>

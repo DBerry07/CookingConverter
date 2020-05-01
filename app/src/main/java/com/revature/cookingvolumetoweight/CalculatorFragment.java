@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,14 +68,43 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         Button btn = (Button) view;
         switch (btn.getId()){
             case R.id.calc_btn_enter:
-                String str = parent.fetchViewText(R.id.display_tv_sub_name);
-                float num = Float.parseFloat(parent.fetchViewText(R.id.display_tv_density));
-                Pair<String, Float> substance = new Pair<>(str, num);
-                Pair<String, Float> from = new Pair<>
-                        (parent.fetchViewText(R.id.display_tv_from_name),
-                                Float.parseFloat(parent.fetchViewText(R.id.display_tv_from_val))
-                        );
-                String to = parent.fetchViewText(R.id.display_tv_to_name);
+                String str, to;
+                Pair<String, Float> substance, from;
+                float num;
+                try {
+                    str = parent.fetchViewText(R.id.display_tv_sub_name);
+                    if (str.isEmpty()) {
+                        Log.d("CALCULATOR", "Unable to obtain substance");
+                        return;
+                    }
+                    num = Float.parseFloat(parent.fetchViewText(R.id.display_tv_density));
+                   substance = new Pair<>(str, num);
+                } catch (NumberFormatException e) {
+                    Log.d("CALCULATOR", "Unable to obtain density");
+                    return;
+                }
+                try {
+                    str = parent.fetchViewText(R.id.display_tv_from_name);
+                    if (str.isEmpty()) {
+                        Log.d("CALCULATOR", "Unable to obtain entry name");
+                        return;
+                    }
+                    num = Float.parseFloat(parent.fetchViewText(R.id.display_tv_from_val));
+                    from = new Pair<>(str, num);
+                } catch (NumberFormatException e) {
+                    Log.d("CALCULATOR", "Unable to obtain entry val");
+                    return;
+                }
+                try {
+                    to = parent.fetchViewText(R.id.display_tv_to_name);
+                    if (to.isEmpty()) {
+                        Log.d("CALCULATOR", "Unable to obtain answer name");
+                        return;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return;
+                }
                 parent.calculate(substance, from, to);
                 break;
             case R.id.calc_btn_point:
