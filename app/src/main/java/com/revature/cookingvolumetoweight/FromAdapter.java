@@ -22,8 +22,8 @@ public class FromAdapter extends RecyclerView.Adapter<FromAdapter.FromViewHolder
 
         public FromViewHolder(View view) {
             super(view);
-            this.name = view.findViewById(R.id.tv_rec_from_name);
-            this.card = view.findViewById(R.id.card_from);
+            this.name = view.findViewById(R.id.tv_units_entry);
+            this.card = view.findViewById(R.id.card_entry);
         }
     }
 
@@ -73,7 +73,7 @@ public class FromAdapter extends RecyclerView.Adapter<FromAdapter.FromViewHolder
         this.parent = parent;
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        this.view = layoutInflater.inflate(R.layout.item_from, parent, false);
+        this.view = layoutInflater.inflate(R.layout.item_units_entry, parent, false);
 
         return new FromAdapter.FromViewHolder(view);
     }

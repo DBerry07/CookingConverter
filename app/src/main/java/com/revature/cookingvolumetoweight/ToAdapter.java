@@ -1,7 +1,6 @@
 package com.revature.cookingvolumetoweight;
 
 import android.annotation.SuppressLint;
-import android.util.Pair;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,8 +22,8 @@ public class ToAdapter extends RecyclerView.Adapter<ToAdapter.ToViewHolder> {
 
         public ToViewHolder(View view) {
             super(view);
-            this.name = view.findViewById(R.id.tv_rec_to_name);
-            this.card = view.findViewById(R.id.card_to);
+            this.name = view.findViewById(R.id.tv_units_answer);
+            this.card = view.findViewById(R.id.card_answer);
         }
     }
 
@@ -75,7 +74,7 @@ public class ToAdapter extends RecyclerView.Adapter<ToAdapter.ToViewHolder> {
         this.parent = parent;
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        this.view = layoutInflater.inflate(R.layout.item_to, parent, false);
+        this.view = layoutInflater.inflate(R.layout.item_units_answer, parent, false);
 
         return new ToAdapter.ToViewHolder(view);
     }

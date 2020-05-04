@@ -3,6 +3,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="blank"></string>
 
+    <string name="density">grams/millilitres</string>
+
     <!-- CALCULATOR BUTTONS -->
     <string name="one">1</string>
     <string name="two">2</string>
@@ -58,4 +60,12 @@
     <string name="flour_corn">corn flour</string>
     <string name="flour_all_purpose">flour (all purpose)</string>
     <string name="salt_rock">rock salt</string>
+
+    <!-- PLACEHOLDERS -->
+    <string name="ph_units_entry">Units (Entry)</string>
+    <string name="ph_units_answer">Units (Answer)</string>
+    <string name="ph_num_entry">Value (Entry)</string>
+    <string name="ph_num_answer">Value (Answer)</string>
+    <string name="ph_sub_name">Substance Name</string>
+    <string name="ph_sub_density">Substance Density</string>
 </resources>

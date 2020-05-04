@@ -68,7 +68,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         Button btn = (Button) view;
         switch (btn.getId()){
             case R.id.calc_btn_enter:
-                String str, to;
+                String str, to, density;
                 Pair<String, Float> substance, from;
                 float num;
                 try {
@@ -77,8 +77,11 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                         Log.d("CALCULATOR", "Unable to obtain substance");
                         return;
                     }
-                    num = Float.parseFloat(parent.fetchViewText(R.id.display_tv_density));
-                   substance = new Pair<>(str, num);
+                    density = parent.fetchViewText(R.id.display_tv_density);
+                    density = density.replace(getResources().getString(R.string.density), getResources().getString(R.string.blank));
+                    density = density.trim();
+                    num = Float.parseFloat(density);
+                    substance = new Pair<>(str, num);
                 } catch (NumberFormatException e) {
                     Log.d("CALCULATOR", "Unable to obtain density");
                     return;

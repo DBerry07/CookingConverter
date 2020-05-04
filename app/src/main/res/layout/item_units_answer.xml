@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_to"
+    android:id="@+id/card_answer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    style="@style/CardUnits">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,9 +11,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_rec_to_name"
+            android:id="@+id/tv_units_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            style="@style/CardUnits"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

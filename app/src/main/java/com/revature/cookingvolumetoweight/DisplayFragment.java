@@ -114,12 +114,22 @@ public class DisplayFragment extends Fragment
                 return false;
             }
         }
+        if (fromVal.getText().equals(getResources().getString(R.string.ph_num_entry))) {
+            try {
+                fromVal.setText(contents);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
         try {
             contents = fromVal.getText().toString();
         } catch (Exception e){
             Log.d("Display Entry", "Failed to get contents of entry textview");
         }
-        contents = contents + str;
+        if ((contents + str).length() <= 20) {
+            contents = contents + str;
+        }
         try {
             fromVal.setText(contents);
         } catch (Exception e) {
@@ -140,7 +150,8 @@ public class DisplayFragment extends Fragment
         }
         try {
             this.substance.setText(name);
-            this.density.setText(Float.toString(density));
+            String text = Float.toString(density) + " " + getResources().getString(R.string.density);
+            this.density.setText(text);
             return true;
         } catch (Exception e){
             e.printStackTrace();
